@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberdade Plena - O Fim da Dependência Emocional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-escuro: #1A237E; /* Azul escuro de fundo */
+            --branco: #FFFFFF;
+            --dourado-sutil: #FFD700; /* Dourado sutil para destaque */
+            --cinza-claro: #F0F0F0;
+            --cinza-medio: #CCCCCC;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--azul-escuro);
+            color: var(--branco);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--azul-escuro);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--branco);
+        }
+
+        header p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--branco);
+        }
+
+        .vsl-section {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: var(--azul-escuro); /* Mantém o fundo escuro para o vídeo */
+        }
+
+        .vsl-section p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: var(--branco);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 0 auto;
+            max-width: 800px; /* Limita a largura máxima do vídeo */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 8px;
+        }
+
+        .cta-button-section {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: var(--azul-escuro); /* Mesma cor de fundo */
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--dourado-sutil);
+            color: var(--azul-escuro); /* Texto do botão em azul escuro para contraste */
+            padding: 20px 40px;
+            font-size: 1.4em;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            border: none; /* Remover borda padrão */
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #FFC000; /* Um dourado um pouco mais vibrante ao passar o mouse */
+            transform: translateY(-3px);
+        }
+
+        .benefits-section {
+            background-color: var(--branco); /* Fundo claro para contrastar */
+            color: var(--azul-escuro);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .benefits-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .benefits-list li {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+            text-align: left;
+        }
+
+        .benefits-list li::before {
+            content: '✓'; /* Ícone de checkmark */
+            color: var(--dourado-sutil);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .testimonials-section {
+            background-color: var(--azul-escuro);
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--branco);
+        }
+
+        .testimonials-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsivo */
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1); /* Um pouco de transparência */
+            border-radius: 10px;
+            padding: 30px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-header img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid var(--dourado-sutil);
+        }
+
+        .testimonial-info h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: var(--branco);
+        }
+
+        .stars {
+            color: var(--dourado-sutil);
+            font-size: 1.2em;
+            margin-top: 5px;
+            letter-spacing: 2px; /* Espaço entre as estrelas */
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1em;
+            color: var(--cinza-claro);
+        }
+
+        .about-section {
+            background-color: var(--branco);
+            color: var(--azul-escuro);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .about-photo img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid var(--dourado-sutil);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .certifications {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .certification-logo img {
+            max-height: 80px; /* Tamanho das logos */
+            width: auto;
+            filter: grayscale(100%) brightness(0%) contrast(100%); /* Para logos que fiquem bem em tons de cinza/escuro */
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .certification-logo img:hover {
+            opacity: 1;
+        }
+
+        .video-testimonials-section {
+            background-color: var(--azul-escuro);
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--branco);
+        }
+
+        .video-testimonials-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .video-testimonial-grid {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .video-testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden; /* Garante que o iframe não vaze */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-testimonial-card .video-container {
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            max-width: none; /* Remove limitação de largura do vídeo genérico */
+            box-shadow: none; /* Remove sombra extra */
+        }
+
+        .final-cta-section {
+            background-color: var(--azul-escuro);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .final-cta-section p {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--branco);
+        }
+
+        footer {
+            background-color: var(--azul-escuro);
+            color: var(--cinza-medio);
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 0.9em;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer a {
+            color: var(--cinza-medio);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--branco);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            .cta-button {
+                font-size: 1.2em;
+                padding: 15px 30px;
+            }
+            .benefits-section h2, .testimonials-section h2, .about-section h2, .video-testimonials-section h2 {
+                font-size: 1.8em;
+            }
+            .testimonial-card, .video-testimonial-card {
+                padding: 20px;
+            }
+            .testimonial-header img {
+                width: 60px;
+                height: 60px;
+            }
+            .about-photo img {
+                width: 150px;
+                height: 150px;
+            }
+            .certifications {
+                gap: 20px;
+            }
+            .certification-logo img {
+                max-height: 60px;
+            }
+            .final-cta-section p {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 40px 15px 30px;
+            }
+            header h1 {
+                font-size: 1.8em;
+            }
+            header p {
+                font-size: 0.9em;
+            }
+            .cta-button {
+                font-size: 1.1em;
+                padding: 12px 25px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .benefits-section, .testimonials-section, .about-section, .video-testimonials-section, .final-cta-section {
+                padding: 40px 15px;
+            }
+            .benefits-list li {
+                font-size: 1em;
+                padding-left: 25px;
+            }
+            .testimonial-header img {
+                width: 50px;
+                height: 50px;
+                margin-right: 10px;
+            }
+            .testimonial-info h3 {
+                font-size: 1em;
+            }
+            .stars {
+                font-size: 1em;
+            }
+            .testimonial-text {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            <h1>Você sente que está emocionalmente preso a algo que já devia ter acabado?</h1>
+            <p>Descubra como recuperar o controle da sua vida emocional com um processo que vai te libertar em apenas 7 dias. Comece agora com um atendimento individual por R$97.</p>
+        </header>
+
+        <section class="vsl-section">
+            <p>Assista ao vídeo e veja como você pode começar agora mesmo sua libertação emocional.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&loop=1&playlist=SEU_VIDEO_ID" title="Vídeo de Libertação Emocional" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="cta-button-section">
+            <a href="#" class="cta-button">Quero começar agora por R$97</a>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <h2>O que você vai receber no seu primeiro atendimento individual:</h2>
+                <ul class="benefits-list">
+                    <li>Atendimento individual online com Adriano Mangabeira</li>
+                    <li>Diagnóstico claro do seu ciclo emocional</li>
+                    <li>Identificação do seu padrão de dependência ou bloqueio</li>
+                    <li>Indicação do caminho ideal para sua libertação emocional completa</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="container">
+                <h2>O que quem já se libertou diz:</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="https://via.placeholder.com/70" alt="Foto Depoimento 1">
+                            <div class="testimonial-info">
+                                <h3>[Nome Cliente 1] – Essa foi a melhor decisão da minha vida!</h3>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Texto completo do depoimento do Cliente 1 aqui. Explique brevemente o problema resolvido e o resultado."</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="https://via.placeholder.com/70" alt="Foto Depoimento 2">
+                            <div class="testimonial-info">
+                                <h3>[Nome Cliente 2] – Impressionante como tudo mudou rápido!</h3>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Texto completo do depoimento do Cliente 2 aqui. Fale sobre a transformação e a clareza obtida."</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="https://via.placeholder.com/70" alt="Foto Depoimento 3">
+                            <div class="testimonial-info">
+                                <h3>[Nome Cliente 3] – Encontrei a paz que eu tanto buscava.</h3>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Texto completo do depoimento do Cliente 3 aqui. Aborde a sensação de liberdade e bem-estar."</p>
+                    </div>
+
+                     <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="https://via.placeholder.com/70" alt="Foto Depoimento 4">
+                            <div class="testimonial-info">
+                                <h3>[Nome Cliente 4] – Uma nova vida começou pra mim!</h3>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Texto completo do depoimento do Cliente 4 aqui. Foque na virada de chave e o recomeço."</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="container">
+                <h2>Conheça o Especialista</h2>
+                <div class="about-content">
+                    <div class="about-photo">
+                        <img src="https://via.placeholder.com/200" alt="Foto de Adriano Mangabeira">
+                    </div>
+                    <p><strong>Adriano Mangabeira</strong> é Trainer em PNL pela NLPIN, Master em Hipnose Clínica e Atendimento Online com certificação internacional pela World Hypnosis Organization (WHO) e Master Coach Neuro Linguístico pela ICI.</p>
+                    <p>Atua há anos ajudando pessoas a romperem ciclos emocionais destrutivos através de técnicas profundas, com linguagem acessível e resultados reais.</p>
+
+                    <div class="certifications">
+                        <div class="certification-logo"><img src="https://via.placeholder.com/150x80?text=Logo+NLIN" alt="Logo NLPIN"></div>
+                        <div class="certification-logo"><img src="https://via.placeholder.com/150x80?text=Logo+WHO" alt="Logo WHO"></div>
+                        <div class="certification-logo"><img src="https://via.placeholder.com/150x80?text=Logo+ICI" alt="Logo ICI"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-testimonials-section">
+            <div class="container">
+                <h2>Veja mais transformações em vídeo:</h2>
+                <div class="video-testimonial-grid">
+                    <div class="video-testimonial-card">
+                         <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/SEU_VIDEO_DEPOIMENTO_1_ID?controls=0&modestbranding=1&rel=0&showinfo=0" title="Depoimento em Vídeo 1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="video-testimonial-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/SEU_VIDEO_DEPOIMENTO_2_ID?controls=0&modestbranding=1&rel=0&showinfo=0" title="Depoimento em Vídeo 2" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="video-testimonial-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/SEU_VIDEO_DEPOIMENTO_3_ID?controls=0&modestbranding=1&rel=0&showinfo=0" title="Depoimento em Vídeo 3" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta-section">
+            <div class="container">
+                <p>Você já esperou tempo demais. Agende agora sua primeira sessão e dê o primeiro passo pra se libertar emocionalmente de vez.</p>
+                <a href="#" class="cta-button">Quero começar agora por R$97</a>
+            </div>
+        </section>
+
+        <footer>
+            © Adriano Mangabeira – Todos os direitos reservados.
+            <br>
+            <a href="#" target="_blank">Termos de Uso</a> | <a href="#" target="_blank">Política de Privacidade</a>
+            </footer>
+
+    </div> </body>
+</html>
